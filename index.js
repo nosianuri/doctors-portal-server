@@ -135,7 +135,7 @@ async function run() {
       res.send({ clientSecret: paymentIntent.client_secret })
     });
 
-    app.get('/service', async (req, res) => {
+    app.get('/services', async (req, res) => {
       const query = {};
       const cursor = serviceCollection.find(query).project({ name: 1 });
       const services = await cursor.toArray();
